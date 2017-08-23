@@ -591,6 +591,9 @@ sampleplayer.CastPlayer.prototype.preloadVideo_ = function(mediaInformation) {
     'url': url,
     'mediaElement': self.mediaElement_
   });
+  host.onAutoPause = function (isAutoPaused) {
+    console.log("isAutoPaused: " + isAutoPaused);
+  }
   host.onError = function() {
     self.preloadPlayer_.unload();
     self.preloadPlayer_ = null;

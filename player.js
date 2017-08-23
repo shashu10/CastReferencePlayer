@@ -836,6 +836,9 @@ sampleplayer.CastPlayer.prototype.loadVideo_ = function(info) {
         'url': url,
         'mediaElement': this.mediaElement_
       });
+      host.onAutoPause = function (isAutoPaused) {
+        console.log("isAutoPaused: " + isAutoPaused);
+      }
       host.onError = loadErrorCallback;
       this.player_ = new cast.player.api.Player(host);
       this.player_.load(protocolFunc(host));
